@@ -8,3 +8,4 @@ Link to download Dataset: https://drive.google.com/u/0/uc?id=1ACGZBuYfimRLd57c8b
 
 # Result Page![ss1](https://user-images.githubusercontent.com/45726271/133246430-31a3c2ae-da21-4f23-8e50-cb6eb090d788.PNG)
 
+![ss2](https://user-images.githubusercontent.com/45726271/133246526-5ba6a90e-60e7-40de-bfde-784ed4f51a2a.PNG)
