@@ -19,6 +19,20 @@ input[type=submit] {
     cursor: pointer;
 }
 
+{
+  background-image: url({{ url_for ('static', filename = 'img.jpg') }});
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  font-weight: bold;
+}
+
 input[type=submit]:hover {
     background-color: #45a049;
 }
