@@ -9,5 +9,7 @@ Werkzeug
 itsdangerous
 MarkupSafe
 tensorflow-cpu
+gTTS
+playsound
 
 
