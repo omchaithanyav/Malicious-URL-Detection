@@ -2,8 +2,25 @@ from flask import Flask, request, render_template
 import validators
 import numpy as np
 import pickle
-import os
 from keras.preprocessing.sequence import pad_sequences
+import playsound
+import os
+from gtts import gTTS
+
+num = 1
+
+def voice(text):
+    global num
+
+    num += 1
+    toSpeak = gTTS(text=text, lang='en', slow=False)
+
+    file = str(num) + ".mp3"
+    toSpeak.save(file)
+
+    playsound.playsound(file, True)
+    os.remove(file)
+
 
 app = Flask(__name__)
 
@@ -24,10 +41,12 @@ def prediction():
         tokens = Tokenizer.texts_to_sequences([url])
         tokens = pad_sequences(tokens, maxlen=100)
         pred = model.predict(np.array(tokens))
-        classes = ['Safe url 😇', 'Malicious url 💀']
+        classes = ['Safe url', 'Malicious url']
         result = classes[pred[0]]
+        voice(result)
         return render_template('result.html', output="{} - is {}".format(url, result))
     else:
+        voice("Entered url is Invalid")
         return render_template('result.html', output=("Entered url is Invalid"))
 
 
